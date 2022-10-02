@@ -1,4 +1,9 @@
-import node as nd
+class node:
+    def __init__ (self,num):
+        self.value = num
+        self.left = None
+        self.right = None
+        self.height = 1
 
 
 class avl_tree:
@@ -41,7 +46,7 @@ class avl_tree:
     
     def insert(self, val, root):
         if root is None:
-            return nd.node(val)
+            return node(val)
         elif val <= root.value:
             root.left = self.insert(val, root.left)
         elif val > root.value:
@@ -102,12 +107,14 @@ class avl_tree:
         self.preorder(root.left)
         self.preorder(root.right)
 
-    def sort_list_by_avl(self,root):
-        if root is None:
+
+    def sort_list_by_avl(self, root):
+        res=[]
+        if root is None:   
             return
-        
-
-
-
-
-
+        if root.left is not None: 
+            res += self.sort_list_by_avl(root.left)
+        res.append(root.value)
+        if root.right is not None:
+            res += self.sort_list_by_avl(root.right)
+        return res
