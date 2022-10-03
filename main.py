@@ -17,7 +17,7 @@ merge_four_data_n = []
 
 #Создание списка
 #for i in range(0,50000,1250):
-for i in range(0,1000,25):
+for i in range(0,5000,125):
     print(i);
     #Создание списка для сортировки
     sorting_list = []
