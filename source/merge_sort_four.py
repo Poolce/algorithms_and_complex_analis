@@ -17,6 +17,7 @@ def _merge(first, second):
         j+=1
     return res
 
+
 def _bubble_sort(array):
     for i in range(len(array)):
         for j in range(i+1,len(array)):
@@ -30,11 +31,24 @@ def _bubble_sort(array):
 
 def merge_sort(array):
     if(len(array)>4):
-        first = array[0:len(array)//2]
 
+        first = array[0:len(array)//2]
         second = array[len(array)//2:len(array)]
         first = merge_sort(first)
         second = merge_sort(second)
+
+        res = _merge(first,second)
+        return res
+    else:
+        return _bubble_sort(array)
+
+def merge_sort_k(array,k):
+    if(k>1):
+    
+        first = array[0:len(array)//2]
+        second = array[len(array)//2:len(array)]
+        first = merge_sort_k(first,k/2)
+        second = merge_sort_k(second,k/2)
 
         res = _merge(first,second)
         return res
