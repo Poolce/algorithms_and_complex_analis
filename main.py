@@ -57,5 +57,6 @@ for i in range(0,5000,125):
 plt.plot(merge_four_data_n,merge_four_data_time,'r*')
 plt.plot(merge_data_n,merge_data_time,'g*')
 plt.plot(avl_sort_n,avl_sort_time,'b*')
-plt.ylabel('some numbers')
+plt.ylabel('Time')
+plt.xlabel('Ellements')
 plt.show()
